@@ -1,6 +1,7 @@
 package com.sparta.jn;
 
 import java.util.Arrays;
+import java.util.Random;
 
 /**
  * Hello world!
@@ -15,5 +16,12 @@ public class App
 
 
         System.out.println(Arrays.toString(ArrayMerger.merge(myArr1,myArr2)));
+
+        int[] ints1 = new int[10];
+        Random rand = new Random();
+        for(int elements: ints1) {
+            elements = rand.nextInt(-50, 50);
+        }
+        System.out.println(Arrays.toString(ints1));
     }
 }
