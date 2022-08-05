@@ -39,8 +39,20 @@ public class ArrayMergerTest {
      }
      
      @Test
-     @DisplayName("Merge")
-     void merge() {
-         
+     @DisplayName("Merge two arrays with a single element of the same value and returns a merged sorted array ")
+     void mergeTwoArraysWithASingleElementOfTheSameValueAndReturnsAMergedSortedArray() {
+         int[] int1 = {5};
+         int[] int2 = {5};
+         int[] expected = {5, 5};
+         Assertions.assertArrayEquals(expected, ArrayMerger.merge(int1, int2));
+     }
+     
+     @Test
+     @DisplayName("Merge to arrays with the maximum integer value and still returns a merged sorted array")
+     void mergeToArraysWithTheMaximumIntegerValueAndStillReturnsAMergedSortedArray() {
+         int[] int1 = {3, Integer.MAX_VALUE};
+         int[] int2 = {5, Integer.MAX_VALUE};
+         int[] expected = {3, 5, Integer.MAX_VALUE, Integer.MAX_VALUE};
+         Assertions.assertArrayEquals(expected, ArrayMerger.merge(int1, int2));
      }
 }
