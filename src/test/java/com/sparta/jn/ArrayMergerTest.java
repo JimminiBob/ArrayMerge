@@ -5,7 +5,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.Random;
 
 public class ArrayMergerTest {
     @Test
@@ -48,11 +47,21 @@ public class ArrayMergerTest {
      }
      
      @Test
-     @DisplayName("Merge to arrays with the maximum integer value and still returns a merged sorted array")
+     @DisplayName("Merge two arrays with the maximum integer value and still returns a merged sorted array")
      void mergeToArraysWithTheMaximumIntegerValueAndStillReturnsAMergedSortedArray() {
          int[] int1 = {3, Integer.MAX_VALUE};
          int[] int2 = {5, Integer.MAX_VALUE};
          int[] expected = {3, 5, Integer.MAX_VALUE, Integer.MAX_VALUE};
          Assertions.assertArrayEquals(expected, ArrayMerger.merge(int1, int2));
      }
+
+    @Test
+    @DisplayName("Merge two arrays one with max in and other with min int and should return sorted merged int")
+    void mergeTwoArraysOneWithMaxInAndOtherWithMinIntAndShouldReturnSortedMergedInt() {
+        int[] int1 = {3, 50, Integer.MAX_VALUE};
+        int[] int2 = {Integer.MIN_VALUE, 5, 10};
+        int[] expected = {Integer.MIN_VALUE, 3, 5, 10 , 50, Integer.MAX_VALUE};
+        Assertions.assertArrayEquals(expected, ArrayMerger.merge(int1, int2));
+
+    }
 }
