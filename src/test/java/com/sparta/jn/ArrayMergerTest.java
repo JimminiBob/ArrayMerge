@@ -28,4 +28,19 @@ public class ArrayMergerTest {
          Assertions.assertArrayEquals(expected, ArrayMerger.merge(ints1, ints2));
 
      }
+
+     @Test
+     @DisplayName("Merge two arrays with a single element and returns a merged sorted array")
+     void mergeTwoArraysWithASingleElementAndReturnsAMergedSortedArray() {
+         int[] int1 = {0};
+         int[] int2 = {99};
+         int[] expected = {0, 99};
+         Assertions.assertArrayEquals(expected, ArrayMerger.merge(int1, int2));
+     }
+     
+     @Test
+     @DisplayName("Merge")
+     void merge() {
+         
+     }
 }
